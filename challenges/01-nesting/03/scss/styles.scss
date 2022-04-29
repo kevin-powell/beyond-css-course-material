@@ -1,0 +1,54 @@
+@use "mixins";
+
+$clr-primary-400: hsl(206, 33%, 37%);
+$clr-primary-500: hsl(206, 33%, 25%);
+$clr-secondary-400: hsl(253, 27%, 35%);
+$clr-secondary-500: hsl(253, 27%, 20%);
+$clr-accent-400: hsl(45, 82%, 65%);
+$clr-accent-500: hsl(45, 82%, 45%);
+
+body {
+  margin: 4rem 0 0;
+  font: {
+    size: 1.25rem;
+    family: system-ui, sans-serif;
+  }
+  text-align: center;
+}
+
+section {
+  padding-block: 3rem;
+}
+
+.container {
+  width: min(100% - 4rem, 50rem);
+  margin-inline: auto;
+}
+
+.surface-primary {
+  background: $clr-primary-400;
+  color: white;
+}
+
+.surface-secondary {
+  background: $clr-secondary-400;
+  color: white;
+}
+
+.surface-accent {
+  background: $clr-accent-400;
+  color: black;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1em 2em;
+  cursor: pointer;
+  border: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.text-subdued {
+  font-size: 1rem;
+}

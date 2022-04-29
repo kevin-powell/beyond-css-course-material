@@ -1,0 +1,80 @@
+body {
+  font-family: system-ui;
+  margin: 0;
+}
+
+.section-one,
+.section-two,
+.section-three {
+  text-align: center;
+  padding: 10vh 0;
+}
+
+.title::after {
+  content: "";
+  display: block;
+  width: 5rem;
+  height: 1px;
+  background-color: black;
+  margin: 2rem auto;
+}
+
+.section-one {
+  background-image: linear-gradient(45deg, red, blue);
+  color: white;
+}
+
+.section-two {
+  background-image: linear-gradient(-72deg, purple, limegreen);
+  color: white;
+}
+
+.section-three {
+  background-image: linear-gradient(0deg, orange, yellow);
+}
+
+.button-one {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  color: white;
+  background-color: black;
+}
+.button-one:hover, .button-one:focus {
+  color: black;
+  background-color: white;
+}
+
+.button-two {
+  display: inline-block;
+  padding: 1em 3em;
+  color: yellow;
+  background-color: #3b0f0f;
+}
+.button-two:hover, .button-two:focus {
+  color: #3b0f0f;
+  background-color: yellow;
+}
+
+.badge-one {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  color: black;
+  background-color: white;
+}
+.badge-one:hover, .badge-one:focus {
+  color: black;
+  background-color: white;
+}
+
+.badge-two {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  color: #006eff;
+  background-color: #0f0f1d;
+}
+.badge-two:hover, .badge-two:focus {
+  color: #006eff;
+  background-color: #0f0f1d;
+}
+
+/*# sourceMappingURL=styles.css.map */

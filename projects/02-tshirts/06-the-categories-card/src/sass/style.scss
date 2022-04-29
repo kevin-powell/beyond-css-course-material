@@ -1,0 +1,183 @@
+// variables
+
+$font-family: "Roboto", sans-serif;
+
+$fw-400: 400;
+$fw-700: 700;
+$fw-900: 900;
+
+$fs-400: 1.125rem;
+$fs-500: 1.25rem;
+$fs-600: 2rem;
+$fs-700: 3rem;
+
+$red-400: hsla(357, 100%, 68%, 1);
+$red-500: hsl(357, 74%, 40%);
+$blue-800: hsla(216, 71%, 16%, 1);
+$neutral-100: hsl(0 0% 100%);
+
+$size-8: 0.5rem;
+$size-12: 0.75rem;
+$size-16: 1rem;
+$size-32: 2rem;
+$size-36: 3rem;
+
+// Placeholders
+
+%shadow {
+  box-shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 0.15);
+}
+
+// Mixins
+
+@mixin interactive-scale($color, $bg, $scale: 1.05) {
+  transform: scale(1);
+  transition: transform 350ms ease;
+
+  &:hover,
+  &:focus {
+    transform: scale($scale);
+    color: $color;
+    background-color: $bg;
+  }
+}
+
+// reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $fs-400;
+  color: $blue-800;
+
+  // for demo
+  margin: $size-36 0;
+}
+
+// composition
+
+.container {
+  width: min(58rem, 100% - 2rem);
+  margin-inline: auto;
+}
+
+.even-columns {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: var(--gap, $size-16);
+}
+
+// Utilities
+
+.margin-block-xl {
+  margin-block: $size-36;
+}
+
+.fw-bold {
+  font-weight: 700;
+}
+.fw-black {
+  font-weight: 900;
+}
+
+.text-center {
+  text-align: center;
+}
+.text-accent {
+  color: $red-400;
+}
+
+.page-title {
+  font-size: $fs-700;
+  font-weight: 900;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+// block
+
+.card {
+  $parent: &;
+  border-radius: $size-32;
+  overflow: hidden;
+  background-color: $neutral-100;
+  @extend %shadow;
+
+  &[data-type="product"] {
+    h2 {
+      font-size: $fs-600;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    #{$parent}__content {
+      position: relative;
+      padding: $size-32 $size-16 $size-16;
+      display: flex;
+      align-items: end;
+      gap: $size-16;
+      justify-content: space-between;
+    }
+
+    .button {
+      position: absolute;
+      top: 0;
+      right: $size-16;
+      transform: translateY(-50%);
+    }
+  }
+
+  &[data-type="link-with-image"] {
+    text-decoration: none;
+    color: $red-500;
+
+    @include interactive-scale($neutral-100, $blue-800);
+
+    #{$parent}__content {
+      padding: $size-16 $size-12;
+    }
+
+    img {
+      height: 8.75rem;
+      width: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+  }
+}
+
+.button {
+  display: inline-block;
+  border: 0;
+  text-decoration: none;
+  cursor: pointer;
+  padding: $size-16;
+  background: $red-400;
+  color: $neutral-100;
+  border-radius: 100vw;
+  @extend %shadow;
+  @include interactive-scale($neutral-100, $red-500);
+}

@@ -1,0 +1,38 @@
+body {
+  margin: 4rem;
+  font-size: 1.25rem;
+  font-family: system-ui, sans-serif;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1em 2em;
+  cursor: pointer;
+  border: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+}
+.btn__primary {
+  background: #3f637d;
+}
+.btn__primary:hover,
+.btn__primary:focus {
+  background: #2b4355;
+}
+.btn__secondary {
+  background: #4c4171;
+}
+.btn__secondary:hover,
+.btn__secondary:focus {
+  background: #2b2541;
+}
+.btn__accent {
+  background: #efca5d;
+  color: black;
+}
+.btn__accent:hover,
+.btn__accent:focus {
+  background: #d1a215;
+}
