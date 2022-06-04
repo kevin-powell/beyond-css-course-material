@@ -1,5 +1,3 @@
-@use "mixins";
-
 $clr-primary-400: hsl(206, 33%, 37%);
 $clr-primary-500: hsl(206, 33%, 25%);
 $clr-secondary-400: hsl(253, 27%, 35%);
@@ -47,8 +45,10 @@ section {
   border: 0;
   text-decoration: none;
   text-transform: uppercase;
+  // your code here
 }
 
 .text-subdued {
   font-size: 1rem;
+  // your code here
 }
