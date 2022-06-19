@@ -1,0 +1,7 @@
+@use "abstracts/colors";
+@use "abstracts/font-sizes";
+
+.card {
+  font-size: $fs-400;
+  color: $clr-primary;
+}
