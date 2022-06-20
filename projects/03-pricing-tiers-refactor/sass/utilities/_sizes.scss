@@ -1,0 +1,52 @@
+@use "../abstracts" as *;
+
+@each $size-name, $size-value in $sizes {
+  .margin {
+    &-#{$size-name} {
+      margin: $size-value;
+
+      &-block-start {
+        margin-block-start: $size-value;
+      }
+      &-block-end {
+        margin-block-end: $size-value;
+      }
+      &-block {
+        margin-block: $size-value;
+      }
+      &-inline-start {
+        margin-inline-start: $size-value;
+      }
+      &-inline-end {
+        margin-inline-end: $size-value;
+      }
+      &-inline {
+        margin-inline: $size-value;
+      }
+    }
+  }
+  .padding {
+    &-#{$size-name} {
+      padding: $size-value;
+
+      &-block-start {
+        padding-block-start: $size-value;
+      }
+      &-block-end {
+        padding-block-end: $size-value;
+      }
+      &-block {
+        padding-block: $size-value;
+      }
+      &-inline-start {
+        padding-inline-start: $size-value;
+      }
+      &-inline-end {
+        padding-inline-end: $size-value;
+      }
+      &-inline {
+        padding-inline: $size-value;
+      }
+    }
+  }
+}

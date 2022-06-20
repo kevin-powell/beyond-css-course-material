@@ -1,0 +1,14 @@
+{
+  "name": "website-starter-template",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.52.3",
+    "vite": "^2.9.9"
+  }
+}
