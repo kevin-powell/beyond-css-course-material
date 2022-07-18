@@ -1,0 +1,37 @@
+@use "sass:map";
+
+$breakpoints: (
+  small: 30em,
+  medium: 45em,
+  large: 65em,
+  xl: 80em,
+);
+
+@mixin mq($size) {
+  $breakpoint: map.get($breakpoints, $size);
+
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+body {
+  // all of these should work
+  @include mq(medium) {
+    background: pink;
+  }
+  @include mq(500px) {
+    background: lightblue;
+  }
+  @include mq(100em) {
+    background: #efefef;
+  }
+
+  // these should fail, with an error telling me why
+  @include mq(reallysmall) {
+    background: yellow;
+  }
+  @include mq(5000) {
+    background: purple;
+  }
+}
