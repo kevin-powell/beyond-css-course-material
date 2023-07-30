@@ -1,0 +1,22 @@
+@charset "UTF-8";
+.primary-article {
+  padding: 3rem 1rem;
+}
+.primary-article .title {
+  font-size: 5rem;
+}
+.primary-article .title span {
+  color: red;
+}
+
+.pointing-list {
+  margin: 2rem 0;
+}
+.pointing-list li {
+  padding-left: 0.5rem;
+}
+.pointing-list li::marker {
+  content: "👉";
+}
+
+/*# sourceMappingURL=main.css.map */

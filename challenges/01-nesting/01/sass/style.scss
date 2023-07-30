@@ -1,7 +1,23 @@
 .primary-article {
   padding: 3rem 1rem;
+
+  .title {
+    font-size: 5rem;
+
+    span {
+      color: red;
+    }
+  }
 }
 
 .pointing-list {
   margin: 2rem 0;
+  
+  li {
+    padding-left: 0.5rem;
+
+    &::marker {
+      content: "👉";
+    }
+  }
 }
