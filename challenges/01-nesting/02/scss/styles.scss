@@ -16,6 +16,31 @@ body {
 
 .btn {
   /* your code starts here */
+  display: inline-block;
+  padding: 1em 2em;
+  cursor: pointer;
+  border: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
 
+  &__primary {
+    background: $clr-primary-400;
+    &:hover {
+      background: $clr-primary-500;
+    }
+  }
+  &__secondary {
+    background: $clr-secondary-400;
+    &:hover {
+      background: $clr-secondary-500;
+    }
+  }
+  &__accent {
+    background: $clr-accent-400;
+    &:hover {
+      background: $clr-accent-500;
+    }
+  }
   /* your code ends here */
 }
