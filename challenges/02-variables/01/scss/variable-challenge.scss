@@ -1,3 +1,9 @@
+$white: #f8f7f7;
+$black: #201e1f;
+$red: #da3f0b;
+$shadow: 0px 2px 6px 4px rgba($black, 0.1);
+$button-radius: 4px;
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,6 +13,8 @@ body {
   font-size: 1.75rem;
   font-family: system-ui, sans-serif;
   line-height: 1.6;
+  color: $black;
+  background-color: $white;
 
   /* this is being used to center the content on the screen */
   display: grid;
@@ -19,12 +27,41 @@ body {
   gap: 0.75em;
   width: min(90%, 60rem);
   padding: 2em;
+
+
+  &__title {
+    color: $red;
+  }
 }
 
 .btn {
   display: inline-block;
   padding: 0.5em 1.5em;
   text-decoration: none;
+  border: 2px solid $red;
+  border-radius: $button-radius;
+
+  &--primary {
+    background-color: $red;
+    color: $white;
+
+    &:hover {
+      background-color: $black;
+    }
+  }
+  
+  &--outline {
+    background-color: $white;
+    color: $red;
+    &:hover {
+      background-color: $black;
+      color: $white;
+    }
+  }
+  &:hover {
+    box-shadow: $shadow;
+  }
+  
 }
 
 .flex-group {
