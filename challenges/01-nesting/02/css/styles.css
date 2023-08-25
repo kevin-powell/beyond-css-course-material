@@ -1,0 +1,38 @@
+body {
+  margin: 4rem;
+  font-size: 1.25rem;
+  font-family: system-ui, sans-serif;
+  text-align: center;
+}
+
+.btn {
+  /* your code starts here */
+  display: inline-block;
+  padding: 1em 2em;
+  cursor: pointer;
+  border: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  /* your code ends here */
+}
+.btn__primary {
+  background: hsl(206, 33%, 37%);
+}
+.btn__primary:hover {
+  background: hsl(206, 33%, 25%);
+}
+.btn__secondary {
+  background: hsl(253, 27%, 35%);
+}
+.btn__secondary:hover {
+  background: hsl(253, 27%, 20%);
+}
+.btn__accent {
+  background: hsl(45, 82%, 65%);
+}
+.btn__accent:hover {
+  background: hsl(45, 82%, 45%);
+}
+
+/*# sourceMappingURL=styles.css.map */
