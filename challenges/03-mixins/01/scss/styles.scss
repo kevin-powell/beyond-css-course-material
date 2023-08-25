@@ -1,3 +1,34 @@
+@mixin linear-gradient($color1, $color2, $deg: 45deg) {
+  background: linear-gradient($deg, $color1, $color2);
+}
+
+@mixin pseudo-underline($width, $height, $backgroundColor, $margin) {
+  content: "";
+  display: block;
+  width: $width;
+  height: $height;
+  background-color: $backgroundColor;
+  margin: $margin auto;
+}
+
+@mixin ui-element($size, $color, $bgColor, $hoverColor, $hoverBgColor) {
+  padding: $size calc($size + 3px);
+  color: $color;
+  background-color: $bgColor;
+  &:hover {
+    color: $hoverColor;
+    background-color: $hoverBgColor;
+  }
+}
+
+@mixin tag($color, $bgColor) {
+  @include ui-element(1em, $color, $bgColor, $color, $bgColor);
+}
+
+@mixin button($size, $color, $bgColor, $hoverColor, $hoverBgColor) {
+  @include ui-element($size, $color, $bgColor, $hoverColor, $hoverBgColor);
+}
+
 body {
   font-family: system-ui;
   margin: 0;
@@ -8,4 +39,37 @@ body {
 .section-three {
   text-align: center;
   padding: 10vh 0;
+}
+
+.section-one {
+  @include linear-gradient(red, blue);
+}
+
+.section-two {
+  @include linear-gradient(aliceblue, hotpink, 27deg);
+}
+
+.section-three {
+  @include linear-gradient(purple, aqua, 90deg);
+}
+
+.title {
+  &::after {
+    @include pseudo-underline(200px, 5px, purple, 1em);
+  }
+}
+
+.button-one {
+  @include button(1em, white, blue, blue, white);
+}
+
+.button-two {
+  @include button(1em, blue, white, white, blue);
+}
+
+.badge-one {
+  @include tag(#bada55, black);
+}
+.badge-two {
+  @include tag(hotpink, red);
 }
