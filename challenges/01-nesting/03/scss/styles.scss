@@ -46,9 +46,33 @@ section {
   text-decoration: none;
   text-transform: uppercase;
   // your code here
+  &:hover, &:focus {
+    background: inherit;
+    color: inherit;
+    outline: currentColor 2px solid;
+  }
+
+  .surface-primary &, .surface-secondary & {
+    background: white;
+    color: black;
+  }
+
+  .surface-accent & {
+    background: black;
+    color: white;
+  }
 }
 
 .text-subdued {
   font-size: 1rem;
   // your code here
+  .surface-primary & {
+    opacity: 0.8;
+  }
+  .surface-secondary & {
+    opacity: 0.7;
+  }
+  .surface-accent & {
+    opacity: 0.6;
+  }
 }
