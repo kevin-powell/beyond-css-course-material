@@ -1,0 +1,197 @@
+// reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+// Typography
+$fw-regular: 400;
+$fw-bold: 700;
+$fw-black: 900;
+
+$fs-400: 1.125rem;
+$fs-500: 1.25rem;
+$fs-600: 2rem;
+$fs-700: 3rem;
+
+$font-family: "Roboto", sans-serif;
+
+// Color
+
+$red-400: hsla(357, 100%, 68%, 1);
+$red-500: hsl(357, 74%, 40%);
+$blue-800: hsla(216, 71%, 16%, 1);
+$neutral-100: hsl(0 0% 100%);
+
+// Sizing
+$size-8: 0.5rem;
+$size-16: 1rem;
+$size-32: 2rem;
+$size-36: 3rem;
+
+// Shadows
+$shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 0.15);
+
+// Abstracts
+%shadow {
+  box-shadow: $shadow;
+}
+
+// Mixins
+@mixin interactive-scale($color, $bgColor, $scale: 1.05) {
+  scale: 1;
+  transition: all 350ms ease;
+
+  &:hover,
+  &:focus {
+    scale: $scale;
+    color: $color;
+    background-color: $bgColor;
+  }
+}
+
+// Base Styles
+
+body {
+  font-family: $font-family;
+  font-size: $fs-400;
+  color: $blue-800;
+
+  margin: $size-36 0;
+}
+
+// Layout
+
+.container {
+  width: min(60rem, 100% - 2rem);
+  margin-inline: auto;
+}
+
+.even-columns {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: var(--gap, $size-16);
+}
+
+// Utility
+
+.text-center {
+  text-align: center;
+}
+
+.text-accent {
+  color: $red-400;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(
+    0 0 0 0
+  ); /* Hide content visually but keep it accessible to screen readers */
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap; /* Prevent content from wrapping */
+}
+
+.page-title {
+  font-size: $fs-700;
+  font-weight: 900;
+}
+
+.card {
+  $parent: &;
+  // Generic card styles
+  box-shadow: $shadow;
+  border-radius: $size-32;
+  overflow: hidden;
+  background-color: $neutral-100;
+
+  &[data-type="product"] {
+    // product card styles
+    img {
+      width: 100%;
+    }
+    h3 {
+      font-weight: $fw-black;
+      text-transform: uppercase;
+      font-size: $fs-600;
+    }
+    #{$parent} {
+      &__content {
+        // Content styles
+        position: relative;
+        padding: $size-32 $size-16 $size-16;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        & .price {
+          font-weight: $fw-bold;
+        }
+      }
+    }
+    .button {
+      position: absolute;
+      right: $size-16;
+      top: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  &[data-type="link-with-image"] {
+    text-decoration: none;
+    color: $red-500;
+
+    @include interactive-scale($neutral-100, $blue-800);
+
+    #{$parent} {
+      &__content {
+        padding: $size-16 $size-8;
+      }
+    }
+    img {
+      height: 8.75rem;
+      width: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+  }
+}
+
+.button {
+  display: inline-block;
+  border: 0;
+  text-decoration: none;
+  cursor: pointer;
+  padding: $size-16;
+  background: $red-400;
+  color: $neutral-100;
+  border-radius: 100vw;
+  @extend %shadow;
+  @include interactive-scale($neutral-100, $red-500);
+}
+
+.top-spacer {
+  margin-top: $size-36;
+}
+
+.bottom-spacer {
+  margin-bottom: $size-36;
+}
