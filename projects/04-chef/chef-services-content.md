@@ -41,13 +41,13 @@ Here are a few of our delicious, home-cooked meals that are sure to please your 
 
 A pan-seared salmon filet served on top of a giant bed of delicious vegetables.
 
-###
+### Steak Tacos
 
-dff
+Delicious rib-eye steak tacos served with chimichurri and fresh limes.
 
-###
+### Seafood platter
 
-ds
+A seafood platter like you've never prepared before.
 
 ## What our clients are saying about us
 
